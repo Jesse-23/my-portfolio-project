@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maduka Jesse - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              "fade-in-up": "fadeInUp 0.6s ease-out",
+              "fade-in": "fadeIn 0.6s ease-out",
+              "skill-bar": "skillBar 2s ease-out",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              skillBar: {
+                "0%": { width: "0%" },
+                "100%": { width: "var(--skill-width)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-slate-900 text-white dark:bg-white dark:text-slate-900 transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-slate-900/95 dark:bg-white/95 backdrop-blur-sm z-50 border-b border-slate-800 dark:border-slate-200"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="text-xl font-bold text-blue-400 dark:text-blue-600">
+            Maduka Jesse
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="nav-link hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="nav-link hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="nav-link hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Theme Toggle & Mobile Menu Button -->
+          <div class="flex items-center space-x-4">
+            <button
+              id="theme-toggle"
+              class="p-2 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
+            >
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <div class="flex flex-col space-y-2">
+            <a
+              href="#home"
+              class="nav-link block py-2 hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link block py-2 hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="nav-link block py-2 hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="nav-link block py-2 hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="nav-link block py-2 hover:text-blue-400 dark:hover:text-blue-600 transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+          Maduka <span class="text-blue-400 dark:text-blue-600">Jesse</span>
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-slate-300 dark:text-slate-600 mb-8 animate-fade-in-up"
+          style="animation-delay: 0.2s"
+        >
+          Front-end Developer & UI/UX Designer
+        </p>
+        <p
+          class="text-lg text-slate-400 dark:text-slate-500 mb-12 max-w-2xl mx-auto animate-fade-in-up"
+          style="animation-delay: 0.4s"
+        >
+          I create beautiful, premium, functional web experiences that solve
+          real-world problems and delight users.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up"
+          style="animation-delay: 0.6s"
+        >
+          <a
+            href="#projects"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            class="border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Get In Touch
+          </a>
+          <button
+            id="download-cv"
+            class="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-slate-900 px-8 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+          >
+            <i class="fas fa-download"></i>
+            Download CV
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="reveal-element">
+            <img
+              src="images/jeje.jpg"
+              alt="Maduka Jesse"
+              class="rounded-lg shadow-2xl w-full max-w-md mx-auto"
+            />
+          </div>
+          <div class="reveal-element">
+            <h2 class="text-4xl font-bold mb-6">
+              About <span class="text-emerald-400">Me</span>
+            </h2>
+            <p class="text-slate-300 dark:text-slate-600 mb-6 leading-relaxed">
+              I'm a passionate Front-end developer with 2+ years of experience
+              creating digital solutions that make a difference. I specialize in
+              modern web technologies and have a keen eye for design.
+            </p>
+            <p class="text-slate-300 dark:text-slate-600 mb-8 leading-relaxed">
+              When I'm not coding, you'll find me exploring new technologies,
+              contributing to open-source projects, or enjoying the great
+              outdoors. I believe in continuous learning and staying up-to-date
+              with the latest industry trends.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <span
+                class="bg-slate-800 dark:bg-slate-200 px-4 py-2 rounded-lg text-sm"
+                >JavaScript</span
+              >
+              <span
+                class="bg-slate-800 dark:bg-slate-200 px-4 py-2 rounded-lg text-sm"
+                >React</span
+              >
+              <span
+                class="bg-slate-800 dark:bg-slate-200 px-4 py-2 rounded-lg text-sm"
+                >TypeScript</span
+              >
+              <span
+                class="bg-slate-800 dark:bg-slate-200 px-4 py-2 rounded-lg text-sm"
+                >Node.js</span
+              >
+              <span
+                class="bg-slate-800 dark:bg-slate-200 px-4 py-2 rounded-lg text-sm"
+                >Python</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 dark:bg-slate-100"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal-element">
+          <h2 class="text-4xl font-bold mb-4">
+            My <span class="text-blue-400 dark:text-blue-600">Projects</span>
+          </h2>
+          <p class="text-slate-300 dark:text-slate-600 max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills and
+            creativity.
+          </p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="flex justify-center mb-12 reveal-element">
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="filter-btn active bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn hover:bg-slate-700 dark:hover:bg-slate-300 px-6 py-2 rounded-lg font-semibold transition-colors"
+              data-filter="web"
+            >
+              Web Apps
+            </button>
+            <button
+              class="filter-btn hover:bg-slate-700 dark:hover:bg-slate-300 px-6 py-2 rounded-lg font-semibold transition-colors"
+              data-filter="design"
+            >
+              Design
+            </button>
+            <button
+              class="filter-btn hover:bg-slate-700 dark:hover:bg-slate-300 px-6 py-2 rounded-lg font-semibold transition-colors"
+              data-filter="mobile"
+            >
+              Mobile
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project skincare -->
+          <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="images/skin-care-project.png"
+                alt="skin-care-project"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-green-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">
+                    <a href="https://skin-care-project-beta.vercel.app/"
+                      >View Project</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Skincare Website</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                A clean and user-friendly website for a skincare brand.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-sm"
+                  >Tailwind</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm"
+                  >JavaScript</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project fashion -->
+          <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="images/fashion-landing-page.png"
+                alt="frontend-landing-page"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-red-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">
+                    <a href="https://fashion-project-ten.vercel.app/"
+                      >View Project</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Fashion Website</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                A modern and responsive front-end solution for a fashion brand
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-sm"
+                  >Tailwind</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm"
+                  >JavaScript</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project dashboard -->
+          <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="images/dashboard-project.png"
+                alt="dashboard-project"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-purple-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">
+                    <a href="https://interactive-dashboard-ruddy.vercel.app/"
+                      >View Project</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Interactive Analytics Dashboard
+              </h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                An Interactive analytics dashboard built with HTML, Tailwind CSS
+                and JavaScript
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-sm"
+                  >Tailwind</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm"
+                  >JavaScript</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Task management app -->
+          <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="images/task-management-app.png"
+                alt="task-management-app"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-green-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">
+                    <a href="https://task-management-app-jade-rho.vercel.app/"
+                      >View Project</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                Collaborative task management tool with real-time updates and
+                team features.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-sm"
+                  >Tailwind</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm"
+                  >HTML/CSS</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 1 -->
+          <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="images/ecommerce website.png"
+                alt="E-commerce Website"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-blue-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">
+                    <a href="https://restaurant-website-pi-five.vercel.app/"
+                      >View Project</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">E-commerce Website</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                A seamless fruit e-commerce solution with user-friendly design
+                and easy navigation.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >React</span
+                >
+                <span
+                  class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-sm"
+                  >Node.js</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm"
+                  >Tailwind</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <!-- <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="design"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Mobile App Design"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-emerald-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">View Design</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Fitness App Design</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                Modern UI/UX design for a fitness tracking mobile application.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded text-sm"
+                  >Figma</span
+                >
+                <span
+                  class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm"
+                  >UI/UX</span
+                >
+                <span
+                  class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-sm"
+                  >Prototyping</span
+                >
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 3 -->
+          <!-- <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Task Management App"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-purple-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">View Project</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                Collaborative task management tool with real-time updates and
+                team features.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >Vue.js</span
+                >
+                <span
+                  class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm"
+                  >Firebase</span
+                >
+                <span
+                  class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-sm"
+                  >Socket.io</span
+                >
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 4 -->
+          <!-- <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="mobile"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Weather App"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-cyan-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">View App</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Weather App</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                Beautiful weather app built with React Native and weather API
+                integration.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded text-sm"
+                  >React Native</span
+                >
+                <span
+                  class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded text-sm"
+                  >API</span
+                >
+                <span
+                  class="bg-teal-500/20 text-teal-400 px-2 py-1 rounded text-sm"
+                  >Expo</span
+                >
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 5 -->
+          <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="web"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Portfolio Website"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-green-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">View Site</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                Responsive portfolio website with smooth animations and modern
+                design.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
+                  >Tailwind</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <!-- <div
+            class="project-card reveal-element bg-slate-900 dark:bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            data-category="design"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Brand Identity"
+                class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-rose-500/80 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                  <p class="font-semibold">View Design</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Brand Identity</h3>
+              <p class="text-slate-400 dark:text-slate-600 mb-4">
+                Complete brand identity design including logo, colors, and style
+                guide.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-rose-500/20 text-rose-400 px-2 py-1 rounded text-sm"
+                  >Branding</span
+                >
+                <span
+                  class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm"
+                  >Illustrator</span
+                >
+                <span
+                  class="bg-pink-500/20 text-pink-400 px-2 py-1 rounded text-sm"
+                  >Logo Design</span
+                >
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal-element">
+          <h2 class="text-4xl font-bold mb-4">
+            My <span class="text-emerald-400">Skills</span>
+          </h2>
+          <p class="text-slate-300 dark:text-slate-600 max-w-2xl mx-auto">
+            Here are the technologies and tools I work with to bring ideas to
+            life.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Technical Skills -->
+          <div class="reveal-element">
+            <h3 class="text-2xl font-bold mb-8">Technical Skills</h3>
+            <div class="space-y-6">
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">JavaScript</span>
+                  <span class="text-slate-400 dark:text-slate-600">90%</span>
+                </div>
+                <div class="bg-slate-700 dark:bg-slate-300 rounded-full h-3">
+                  <div
+                    class="skill-bar bg-blue-500 h-3 rounded-full"
+                    style="--skill-width: 90%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">React</span>
+                  <span class="text-slate-400 dark:text-slate-600">85%</span>
+                </div>
+                <div class="bg-slate-700 dark:bg-slate-300 rounded-full h-3">
+                  <div
+                    class="skill-bar bg-cyan-500 h-3 rounded-full"
+                    style="--skill-width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">TypeScript</span>
+                  <span class="text-slate-400 dark:text-slate-600">80%</span>
+                </div>
+                <div class="bg-slate-700 dark:bg-slate-300 rounded-full h-3">
+                  <div
+                    class="skill-bar bg-orange-500 h-3 rounded-full"
+                    style="--skill-width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">Node.js</span>
+                  <span class="text-slate-400 dark:text-slate-600">80%</span>
+                </div>
+                <div class="bg-slate-700 dark:bg-slate-300 rounded-full h-3">
+                  <div
+                    class="skill-bar bg-emerald-500 h-3 rounded-full"
+                    style="--skill-width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">Python</span>
+                  <span class="text-slate-400 dark:text-slate-600">70%</span>
+                </div>
+                <div class="bg-slate-700 dark:bg-slate-300 rounded-full h-3">
+                  <div
+                    class="skill-bar bg-yellow-500 h-3 rounded-full"
+                    style="--skill-width: 75%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">UI/UX Design</span>
+                  <span class="text-slate-400 dark:text-slate-600">85%</span>
+                </div>
+                <div class="bg-slate-700 dark:bg-slate-300 rounded-full h-3">
+                  <div
+                    class="skill-bar bg-purple-500 h-3 rounded-full"
+                    style="--skill-width: 85%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Technologies -->
+          <div class="reveal-element">
+            <h3 class="text-2xl font-bold mb-8">Tools & Technologies</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-react text-3xl text-cyan-400 mb-2"></i>
+                <p class="font-semibold">React</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-node-js text-3xl text-emerald-400 mb-2"></i>
+                <p class="font-semibold">Node js</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-python text-3xl text-yellow-400 mb-2"></i>
+                <p class="font-semibold">Python</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-figma text-3xl text-purple-400 mb-2"></i>
+                <p class="font-semibold">Figma</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-git-alt text-3xl text-orange-400 mb-2"></i>
+                <p class="font-semibold">Git</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-css3-alt text-3xl text-cyan-400 mb-2"></i>
+                <p class="font-semibold">Tailwind</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 dark:bg-slate-100"
+    >
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 reveal-element">
+          <h2 class="text-4xl font-bold mb-4">
+            Get In <span class="text-blue-400 dark:text-blue-600">Touch</span>
+          </h2>
+          <p class="text-slate-300 dark:text-slate-600 max-w-2xl mx-auto">
+            Have a project in mind? Let's work together to bring your ideas to
+            life.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div class="reveal-element">
+            <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <i
+                  class="fas fa-envelope text-blue-400 dark:text-blue-600 text-xl"
+                ></i>
+                <span>madukajesse14@gmail.com</span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <a href="https://wa.link/0imrn5" target="_blank" rel="noopener">
+                  <i class="fab fa-whatsapp text-emerald-400 text-xl"></i>
+                </a>
+                <span>+234 8139468776</span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <i class="fas fa-map-marker-alt text-purple-400 text-xl"></i>
+                <span>Enugu State, Nigeria</span>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+              <div class="flex space-x-4">
+                <a
+                  href="https://www.linkedin.com/in/jesse-maduka-b38183344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/Jesse-23"
+                  class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://x.com/Dev_JesseMaduka?t=tsWDvAmH0wVIb0mmzxS6MQ&s=09"
+                  class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@je_sse78?_t=ZS-8zjOBHdzz3x&_r=1"
+                  class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
+                >
+                  <i class="fab fa-tiktok"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jesse-maduka-b38183344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="reveal-element">
+            <form
+              id="contact-form"
+              class="space-y-6"
+              action="https://formspree.io/f/mdkykvge"
+              method="POST"
+            >
+              <div>
+                <label for="name" class="block text-sm font-semibold mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900 dark:bg-white border border-slate-700 dark:border-slate-300 rounded-lg focus:outline-none focus:border-blue-400 dark:focus:border-blue-600 transition-colors"
+                />
+                <span class="error-message text-red-400 text-sm hidden"></span>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900 dark:bg-white border border-slate-700 dark:border-slate-300 rounded-lg focus:outline-none focus:border-blue-400 dark:focus:border-blue-600 transition-colors"
+                />
+                <span class="error-message text-red-400 text-sm hidden"></span>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-semibold mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-slate-900 dark:bg-white border border-slate-700 dark:border-slate-300 rounded-lg focus:outline-none focus:border-blue-400 dark:focus:border-blue-600 transition-colors resize-none"
+                ></textarea>
+                <span class="error-message text-red-400 text-sm hidden"></span>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-colors"
+              >
+                Send Message
+              </button>
+
+              <div id="form-feedback" class="text-center hidden">
+                <p class="success-message text-emerald-400 hidden">
+                  Message sent successfully!
+                </p>
+                <p class="error-message text-red-400 hidden">
+                  Please fix the errors above.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-800 dark:border-slate-200"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="text-slate-400 dark:text-slate-600">
+          © 2025 Maduka Jesse. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("N1zrOhibQONnqxKnH"); // Replace with your Public Key
+      })();
+    </script>
+  </body>
+</html>
