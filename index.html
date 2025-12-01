@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maduka Jesse - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['Amaranth', 'sans-serif'],
+            },
             animation: {
               "fade-in-up": "fadeInUp 0.6s ease-out",
               "fade-in": "fadeIn 0.6s ease-out",
@@ -660,9 +664,7 @@
                 <div class="text-center">
                   <i class="fas fa-external-link-alt text-2xl mb-2"></i>
                   <p class="font-semibold">
-                    <a href="https://madukajesse.vercel.app/"
-                      >View Project</a
-                    >
+                    <a href="https://madukajesse.vercel.app/">View Project</a>
                   </p>
                 </div>
               </div>
@@ -872,7 +874,25 @@
                 class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
               >
                 <i class="fab fa-css3-alt text-3xl text-cyan-400 mb-2"></i>
-                <p class="font-semibold">Tailwind</p>
+                <p class="font-semibold">CSS/Tailwind</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fab fa-js text-3xl text-blue-500 mb-2"></i>
+                <p class="font-semibold">JavaScript</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fas fa-envelope text-3xl text-amber-500 mb-2"></i>
+                <p class="font-semibold">Postman</p>
+              </div>
+              <div
+                class="text-center p-4 bg-slate-800 dark:bg-slate-100 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors"
+              >
+                <i class="fas fa-code text-3xl text-indigo-800 mb-2"></i>
+                <p class="font-semibold">Vs Code</p>
               </div>
             </div>
           </div>
@@ -896,32 +916,114 @@
           </p>
         </div>
 
+        <!-- Contact cards grid -->
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <!-- Email Card -->
+          <a
+            href="mailto:madukajesse14@gmail.com"
+            class="reveal-element bg-slate-700 dark:bg-slate-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 text-center hover:scale-105 cursor-pointer block"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-blue-500 rounded-lg mb-4"
+            >
+              <i class="fas fa-envelope text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Email</h3>
+            <p class="text-blue-400 dark:text-blue-600">
+              madukajesse14@gmail.com
+            </p>
+          </a>
+
+          <!-- WhatsApp Card -->
+          <a
+            href="https://wa.link/0imrn5"
+            target="_blank"
+            class="reveal-element bg-slate-700 dark:bg-slate-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 text-center border-2 border-emerald-400 hover:scale-105 cursor-pointer block"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-emerald-500 rounded-lg mb-4"
+            >
+              <i class="fab fa-whatsapp text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">WhatsApp</h3>
+            <p class="text-emerald-400 dark:text-emerald-600">
+              +234 8139468776
+            </p>
+          </a>
+
+          <!-- GitHub Card -->
+          <a
+            href="https://github.com/Jesse-23"
+            target="_blank"
+            class="reveal-element bg-slate-700 dark:bg-slate-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 text-center hover:scale-105 cursor-pointer block"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-slate-600 dark:bg-slate-400 rounded-lg mb-4"
+            >
+              <i class="fab fa-github text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+            <p class="text-blue-400 dark:text-blue-600">Maduka Jesse</p>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a
+            href="https://www.linkedin.com/in/jesse-maduka-b38183344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            class="reveal-element bg-slate-700 dark:bg-slate-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 text-center hover:scale-105 cursor-pointer block"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-lg mb-4"
+            >
+              <i class="fab fa-linkedin text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+            <p class="text-blue-400 dark:text-blue-600">Maduka Jesse</p>
+          </a>
+
+          <!-- Twitter Card -->
+          <a
+            href="https://x.com/Dev_JesseMaduka?t=tsWDvAmH0wVIb0mmzxS6MQ&s=09"
+            target="_blank"
+            class="reveal-element bg-slate-700 dark:bg-slate-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 text-center hover:scale-105 cursor-pointer block"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-blue-400 rounded-lg mb-4"
+            >
+              <i class="fab fa-twitter text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Twitter</h3>
+            <p class="text-blue-400 dark:text-blue-600">Maduka Jesse</p>
+          </a>
+
+          <!-- Tiktok Card -->
+          <a
+            href="https://www.tiktok.com/@dev_jesse?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            class="reveal-element bg-slate-700 dark:bg-slate-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 text-center hover:scale-105 cursor-pointer block"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-neutral-800 rounded-lg mb-4"
+            >
+              <i class="fab fa-tiktok text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Tiktok</h3>
+            <p class="text-blue-400 dark:text-blue-600">Maduka Jesse</p>
+          </a>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-12">
-          <!-- Contact Info -->
+          <!-- Lets Connect -->
           <div class="reveal-element">
             <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
-            <div class="space-y-4">
-              <div class="flex items-center space-x-4">
-                <i
-                  class="fas fa-envelope text-blue-400 dark:text-blue-600 text-xl"
-                ></i>
-                <span>madukajesse14@gmail.com</span>
-              </div>
-              <div class="flex items-center space-x-4">
-                <a href="https://wa.link/0imrn5" target="_blank" rel="noopener">
-                  <i class="fab fa-whatsapp text-emerald-400 text-xl"></i>
-                </a>
-                <span>+234 8139468776</span>
-              </div>
-              <div class="flex items-center space-x-4">
-                <i class="fas fa-map-marker-alt text-purple-400 text-xl"></i>
-                <span>Enugu State, Nigeria</span>
-              </div>
-            </div>
-
-            <div class="mt-8">
-              <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+            <div class="mt-4">
               <div class="flex space-x-4">
+                <a
+                  href="mailto:madukajesse14@gmail.com"
+                  class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
                 <a
                   href="https://www.linkedin.com/in/jesse-maduka-b38183344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   class="text-slate-400 hover:text-blue-400 dark:hover:text-blue-600 text-2xl transition-colors"
@@ -954,16 +1056,16 @@
                 </a>
               </div>
             </div>
-          </div>
 
           <!-- Contact Form -->
-          <div class="reveal-element">
+          <!-- <div class="reveal-element">
             <form
               id="contact-form"
               class="space-y-6"
               action="https://formspree.io/f/mdkykvge"
               method="POST"
             >
+            <h3 class="text-2xl font-bold mb-8 text-center">or Send Me a Message</h3>
               <div>
                 <label for="name" class="block text-sm font-semibold mb-2"
                   >Name</label
@@ -1022,7 +1124,7 @@
                 </p>
               </div>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>

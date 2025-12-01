@@ -104,105 +104,110 @@ filterButtons.forEach((button) => {
   });
 });
 
-// Form Validation
+// Form Validation (only initialize if the form exists)
 const contactForm = document.getElementById("contact-form");
-const formInputs = contactForm.querySelectorAll("input, textarea");
+if (contactForm) {
+  const formInputs = contactForm.querySelectorAll("input, textarea");
 
-formInputs.forEach((input) => {
-  input.addEventListener("blur", () => validateField(input));
-  input.addEventListener("input", () => clearError(input));
-});
-
-function validateField(field) {
-  const value = field.value.trim();
-
-  clearError(field);
-
-  if (field.name === "name" && value.length < 2) {
-    showError(field, "Name must be at least 2 characters long");
-    return false;
-  }
-
-  if (field.name === "email") {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) {
-      showError(field, "Please enter a valid email address");
-      return false;
-    }
-  }
-
-  if (field.name === "message") {
-    // This require message to be more than 3 words (i.e. at least 4 words)
-    const wordCount = value.split(/\s+/).filter(Boolean).length;
-    if (wordCount <= 3) {
-      showError(field, "Message must be more than 3 words (at least 4 words).");
-      return false;
-    }
-  }
-
-  return true;
-}
-
-function showError(field, message) {
-  const errorElement = field.nextElementSibling;
-  errorElement.textContent = message;
-  errorElement.classList.remove("hidden");
-  field.classList.add("border-red-400");
-}
-
-function clearError(field) {
-  const errorElement = field.nextElementSibling;
-  errorElement.classList.add("hidden");
-  field.classList.remove("border-red-400");
-}
-
-//  Formspree submission
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  let isValid = true;
   formInputs.forEach((input) => {
-    if (!validateField(input)) isValid = false;
+    input.addEventListener("blur", () => validateField(input));
+    input.addEventListener("input", () => clearError(input));
   });
 
-  const feedback = document.getElementById("form-feedback");
-  const successMessage = feedback.querySelector(".success-message");
-  const errorMessage = feedback.querySelector(".error-message");
+  function validateField(field) {
+    const value = field.value.trim();
 
-  if (!isValid) {
-    errorMessage.classList.remove("hidden");
-    successMessage.classList.add("hidden");
-    feedback.classList.remove("hidden");
-    return;
+    clearError(field);
+
+    if (field.name === "name" && value.length < 2) {
+      showError(field, "Name must be at least 2 characters long");
+      return false;
+    }
+
+    if (field.name === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        showError(field, "Please enter a valid email address");
+        return false;
+      }
+    }
+
+    if (field.name === "message") {
+      const wordCount = value.split(/\s+/).filter(Boolean).length;
+      if (wordCount <= 3) {
+        showError(field, "Message must be more than 3 words (at least 4 words).");
+        return false;
+      }
+    }
+
+    return true;
   }
 
-  // Send data to Formspree
-  const formData = new FormData(contactForm);
+  function showError(field, message) {
+    const errorElement = field.nextElementSibling;
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.remove("hidden");
+    }
+    field.classList.add("border-red-400");
+  }
 
-  try {
-    const response = await fetch(contactForm.action, {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" },
+  function clearError(field) {
+    const errorElement = field.nextElementSibling;
+    if (errorElement) errorElement.classList.add("hidden");
+    field.classList.remove("border-red-400");
+  }
+
+  // Formspree submission
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    let isValid = true;
+    formInputs.forEach((input) => {
+      if (!validateField(input)) isValid = false;
     });
 
-    if (response.ok) {
-      successMessage.classList.remove("hidden");
-      errorMessage.classList.add("hidden");
-      feedback.classList.remove("hidden");
-      contactForm.reset();
+    const feedback = document.getElementById("form-feedback");
+    const successMessage = feedback ? feedback.querySelector(".success-message") : null;
+    const errorMessage = feedback ? feedback.querySelector(".error-message") : null;
 
-      setTimeout(() => feedback.classList.add("hidden"), 5000);
-    } else {
-      throw new Error("Formspree submission failed");
+    if (!isValid) {
+      if (errorMessage) errorMessage.classList.remove("hidden");
+      if (successMessage) successMessage.classList.add("hidden");
+      if (feedback) feedback.classList.remove("hidden");
+      return;
     }
-  } catch (err) {
-    console.error(err);
-    errorMessage.textContent = "Failed to send message. Please try again.";
-    errorMessage.classList.remove("hidden");
-    feedback.classList.remove("hidden");
-  }
-});
+
+    // Send data to Formspree
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        if (successMessage) successMessage.classList.remove("hidden");
+        if (errorMessage) errorMessage.classList.add("hidden");
+        if (feedback) feedback.classList.remove("hidden");
+        contactForm.reset();
+
+        setTimeout(() => feedback.classList.add("hidden"), 5000);
+      } else {
+        throw new Error("Formspree submission failed");
+      }
+    } catch (err) {
+      console.error(err);
+      if (errorMessage) {
+        errorMessage.textContent = "Failed to send message. Please try again.";
+        errorMessage.classList.remove("hidden");
+      }
+      if (feedback) feedback.classList.remove("hidden");
+    }
+  });
+}
 
 // Scroll to Top Button
 const scrollToTopBtn = document.getElementById("scroll-to-top");
